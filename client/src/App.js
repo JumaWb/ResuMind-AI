@@ -1,27 +1,22 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import Navbar from "./components/Navbar";
-import Button from "./components/Button";
-import Card from "./components/Card";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CustomNavbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Upload from "./pages/Upload";
+import About from "./pages/About";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="d-flex flex-column min-vh-100">
-      {/* Navbar */}
-      <Navbar />
-
-      {/* Main Content */}
-      <div className="main-content">
-        <Container className="text-center mt-5">
-          <Button />
-          <Card />
-        </Container>
-      </div>
-
-      {/* Footer */}
+    <Router>
+      <CustomNavbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
