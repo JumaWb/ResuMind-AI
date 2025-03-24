@@ -1,11 +1,26 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
+import Navbar from "./components/Navbar";
+import Button from "./components/Button";
+import Card from "./components/Card";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="container text-center mt-5">
-      <h1>Welcome to Bootstrap in React!</h1>
-      <Button variant="primary" className="mt-3">Click Me</Button>
+    <div className="d-flex flex-column min-vh-100">
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Main Content */}
+      <div className="main-content">
+        <Container className="text-center mt-5">
+          <Button />
+          <Card />
+        </Container>
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
