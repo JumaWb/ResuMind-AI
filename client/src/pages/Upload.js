@@ -14,7 +14,7 @@ const Upload = () => {
 
   const fetchUploadedResumes = async () => {
     try {
-      const response = await fetch("/api/resumes");
+      const response = await fetch("http://127.0.0.1:5000/api/resumes");
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const resumes = await response.json();
       setUploadedResumes(resumes);
@@ -22,6 +22,7 @@ const Upload = () => {
       console.error("Error fetching resumes:", error);
     }
   };
+  
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
